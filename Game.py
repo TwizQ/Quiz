@@ -12,16 +12,16 @@ for i in range(1, 6):
         a = int(input())
     except:
         exit()
-    if a > 0 and a < 5:
+    if a >= 1 and a <= 4:
         if connect.cursor().execute(table).fetchall()[0][6] == connect.cursor().execute(table).fetchall()[0][a + 1]:
-            print("Вы ответили верно (｡◕‿◕｡)")
+            print("You answered correctly")
         else:
-            print("Ответ неверно (ノಠ益ಠ)ノ彡┻━┻")
+            print("The answer is wrong")
             exit()
     else:
-        print("Такого ответа нету ಠ_ಠ")
+        print("There is no such answer")
         exit()
-print("Победа (づ｡◕‿‿◕｡)づ")
+print("Victory")
 
 connect.commit()
 connect.cursor().close()
